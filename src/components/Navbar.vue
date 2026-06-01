@@ -20,12 +20,7 @@
         </RouterLink>
       </div>
 
-      <RouterLink
-        to="/contact"
-        class="hidden rounded-md bg-cyan-500 px-5 py-3 text-sm font-black text-slate-950 shadow-sm shadow-cyan-500/20 transition hover:bg-cyan-400 lg:inline-flex"
-      >
-        Start a project
-      </RouterLink>
+      
 
       <button
         type="button"
