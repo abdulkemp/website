@@ -8,8 +8,10 @@
       <ServicesView id="services" class="w-full h-fit flex flex-col justify-center items-center" />
       <WorkView id="work" class="w-full h-fit flex flex-col justify-center items-center" />
       <ProcessView id="process" class="w-full h-fit flex flex-col justify-center items-center" />
+      <ReviewsView id="review" class="w-full h-fit flex flex-col justify-center items-center" />
       <ContactView id="contact" class="w-full h-fit flex flex-col justify-center items-center" />
     </main>
+    <Footer />
   </div>
 </template>
 
@@ -23,7 +25,8 @@ import HomeView from "./views/HomeView.vue";
 import ProcessView from "./views/ProcessView.vue";
 import ServicesView from "./views/ServicesView.vue";
 import WorkView from "./views/WorkView.vue";
-
+import ReviewsView from "./views/ReviewsView.vue";
+import Footer from "./components/Footer.vue";
 const route = useRoute();
 
 const sectionByPath = {
@@ -33,6 +36,7 @@ const sectionByPath = {
   "/work": "work",
   "/process": "process",
   "/contact": "contact",
+  "/review": "review",
 };
 
 watch(

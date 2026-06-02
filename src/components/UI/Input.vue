@@ -10,7 +10,7 @@
       <span v-if="required" class="text-red-500 ml-1">*</span>
     </label>
 
-    <div class="relative flex items-center">
+    <div class="relative flex items-center" :class="wrapperClass">
       <!-- Prepend -->
       <span
         v-if="$slots.prepend"
@@ -30,13 +30,16 @@
         :required="required"
         :maxlength="maxlength"
         class="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-black transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 fold:text-base"
-        :class="{
-          'border-red-500 focus:ring-red-500': error,
-          'rounded-l-none': $slots.prepend,
-          'rounded-r': $slots.append || isPasswordField,
-          'bg-gray-100 cursor-not-allowed': disabled,
-          'pr-10': isPasswordField
-        }"
+        :class="[
+          inputClass,
+          {
+            'border-red-500 focus:ring-red-500': error,
+            'rounded-l-none': $slots.prepend,
+            'rounded-r': $slots.append || isPasswordField,
+            'bg-gray-100 cursor-not-allowed': disabled,
+            'pr-10': isPasswordField
+          }
+        ]"
         @input="handleInput"
         @blur="$emit('blur', $event)"
         @focus="$emit('focus', $event)"
@@ -93,6 +96,7 @@
       <span
         v-else-if="$slots.append"
         class="inline-flex items-center px-3 bg-gray-50 border border-l-0 border-gray-300 rounded-r-md"
+        :class="appendClass"
       >
         <slot name="append" />
       </span>
@@ -133,7 +137,19 @@ const props = defineProps({
   required: Boolean,
   error: String,
   hint: String,
-  maxlength: [String, Number]
+  maxlength: [String, Number],
+  wrapperClass: {
+    type: [String, Array, Object],
+    default: ''
+  },
+  inputClass: {
+    type: [String, Array, Object],
+    default: ''
+  },
+  appendClass: {
+    type: [String, Array, Object],
+    default: ''
+  }
 })
 
 const emit = defineEmits([

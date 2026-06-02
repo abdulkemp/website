@@ -1,5 +1,5 @@
 <template>
-  <section class="scroll-mt-20 bg-white px-5 py-24 sm:px-8 lg:px-10">
+  <!-- <section class="scroll-mt-20 bg-white px-5 py-24 sm:px-8 lg:px-10">
     <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
       <div>
         <p class="text-sm font-black uppercase text-cyan-600">About the agency</p>
@@ -28,5 +28,5 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </template>

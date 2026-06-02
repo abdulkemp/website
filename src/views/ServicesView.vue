@@ -1,57 +1,70 @@
 <template>
-  <section class="scroll-mt-20 bg-slate-100 px-5 py-24 sm:px-8 lg:px-10">
-    <div class="mx-auto max-w-7xl">
-      <div class="mb-12 max-w-3xl">
-        <p class="text-sm font-black uppercase text-cyan-600">Services</p>
-        <h2 class="mt-4 text-4xl font-black leading-tight text-slate-950 sm:text-5xl">
-          Everything your website needs to work harder.
-        </h2>
-      </div>
+  <section class="w-full h-fit py-10 px-20 flex flex-col gap-5 scroll-mt-20 bg-gray-100">
+    <div class="w-full h-full flex flex-col items-center justify-center">
+      <h1 class="text-xs text-purple-800 pb-3" style="font-weight: 600">
+        WHAT WE DO
+      </h1>
+      <p class="text-lg text-gray-700" style="font-weight: 600">
+        End-to-end web solutions
+      </p>
+      <p class="text-lg text-gray-700" style="font-weight: 600">
+        that drive results
+      </p>
+    </div>
 
-      <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        <article v-for="service in services" :key="service.title" class="rounded-lg bg-white p-7 shadow-sm ring-1 ring-slate-200">
-          <div class="mb-8 grid h-12 w-12 place-items-center rounded-md bg-slate-950 text-lg font-black text-cyan-300">
-            {{ service.number }}
+    <div class="grid gap-5 md:grid-cols-1 lg:grid-cols-4">
+      <BaseCard
+        v-for="service in services"
+        :key="service.title"
+        padding="lg"
+        variant="elevated"
+        class="h-full flex flex-col gap-2 p-5"
+      >
+        <template #header>
+          <div
+            class="mb-8 grid h-12 w-12 place-items-center rounded-md border border-gray-100 bg-white text-purple-800"
+          >
+            <component :is="service.icon" :size="26" weight="bold" />
           </div>
-          <h3 class="text-2xl font-black text-slate-950">{{ service.title }}</h3>
-          <p class="mt-4 leading-7 text-slate-600">{{ service.copy }}</p>
-        </article>
-      </div>
+          <h3 class="text-xl font-black text-slate-950 pt-2">
+            {{ service.title }}
+          </h3>
+        </template>
+        <p class="mt-4 leading-7 text-slate-600">{{ service.copy }}</p>
+      </BaseCard>
     </div>
   </section>
 </template>
 
 <script setup>
+import { BaseCard } from "@/components/UI";
+import {
+  PhCode,
+  PhDevices,
+  PhRocketLaunch,
+  PhShield,
+} from "@phosphor-icons/vue";
+
 const services = [
   {
-    number: "01",
-    title: "Brand websites",
-    copy: "Sharp marketing sites for teams that need trust, clarity, and a stronger first impression.",
+    icon: PhCode,
+    title: "Custom Web development",
+    copy: "We build tailor-made websites that are fast, responsive, and designed to convert visitors into customers.",
   },
   {
-    number: "02",
-    title: "UI/UX design",
-    copy: "User journeys, wireframes, and polished interfaces designed around real conversion goals.",
+    icon: PhDevices,
+    title: "Responsive Design",
+    copy: "Our websites are optimized for all devices, ensuring a seamless user experience whether on desktop, tablet, or mobile.",
   },
   {
-    number: "03",
-    title: "Web development",
-    copy: "Responsive Vue builds with TailwindCSS, clean components, and performance-minded delivery.",
+    icon: PhRocketLaunch,
+    title: "Performance Optimization",
+    copy: "We focus on speed and performance, ensuring your website loads quickly and runs smoothly to keep visitors engaged.",
   },
   {
-    number: "04",
-    title: "Landing pages",
-    copy: "Campaign pages built to test offers, capture leads, and move fast without feeling temporary.",
-  },
-  {
-    number: "05",
-    title: "SEO foundations",
-    copy: "Semantic structure, metadata, speed improvements, and launch basics for discoverability.",
-  },
-  {
-    number: "06",
-    title: "Care plans",
-    copy: "Ongoing updates, improvements, analytics reviews, and technical support after launch.",
+    icon: PhShield,
+    title: "Maintenance & Support",
+    copy: "We provide ongoing maintenance and support to ensure your website remains up-to-date and performs at its best.",
   },
 ];
 </script>
