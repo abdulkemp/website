@@ -5,7 +5,7 @@
     <div class="w-full h-full flex flex-col items-center justify-center">
       <h3 class="text-purple-600" style="font-weight: 600">GET IN TOUCH</h3>
     </div>
-    <div class="flex h-[40rem] w-full items-stretch gap-10 px-20">
+    <div class="flex h-160 w-full items-stretch gap-10 px-20">
       <div class="flex h-full w-full flex-col gap-3 px-15">
         <div class="w-full h-fit flex flex-col items-start gap-5">
           <h3
