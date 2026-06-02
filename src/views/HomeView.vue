@@ -3,7 +3,7 @@
     class="relative isolate flex h-fit flex-row items-center overflow-hidden bg-white text-black sm:px-8 lg:px-10"
   >
     <div class="w-1/2 h-fit">
-      <div class="w-fit flex flex-col gap-9">
+      <div class="w-fit flex flex-col gap-9 pl-10">
         <div
           class="w-fit py-1 px-3 bg-gray-100 rounded-3xl flex items-center gap-2"
         >
