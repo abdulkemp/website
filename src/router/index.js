@@ -7,6 +7,7 @@ const routes = [
   { path: '/work', name: 'work' },
   { path: '/process', name: 'process' },
   { path: '/contact', name: 'contact' },
+  { path: '/review', name: 'review' },
 ]
 
 const router = createRouter({

@@ -1,7 +1,5 @@
-<!-- src/components/ui/BaseCard.vue -->
 <template>
   <div :class="cardClasses">
-    <!-- Header -->
     <div v-if="$slots.header || title" class="mb-4">
       <slot name="header">
         <h3 class="text-lg font-semibold text-gray-800">
@@ -10,12 +8,10 @@
       </slot>
     </div>
 
-    <!-- Body -->
     <div class="text-sm text-gray-600">
       <slot></slot>
     </div>
 
-    <!-- Footer -->
     <div v-if="$slots.footer" class="mt-4 flex justify-end gap-2">
       <slot name="footer"></slot>
     </div>

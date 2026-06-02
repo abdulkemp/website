@@ -56,7 +56,8 @@ const props = defineProps({
         "warning",
         "info",
         "light",
-        "dark"
+        "dark",
+        "ghost"
       ].includes(value)
   },
   size: {
@@ -113,9 +114,9 @@ const baseClasses =
 
 const variantClasses = {
   primary:
-    "border border-primary bg-primary text-white shadow-sm hover:bg-gradient-to-r hover:from-primary hover:to-[#335233] hover:text-white focus:ring-primary focus:ring-offset-primary",
+    "border border-slate-950 bg-slate-950 text-white shadow-sm hover:bg-slate-800 focus:ring-slate-950",
   secondary:
-    "border border-secondary bg-secondary text-black shadow-sm hover:bg-gradient-to-r hover:from-secondary hover:to-[#b0a286] hover:text-black focus:ring-secondary focus:ring-offset-primary",
+    "border border-cyan-400 bg-cyan-400 text-slate-950 shadow-sm hover:bg-cyan-300 focus:ring-cyan-400",
   success:
     "bg-green-600 text-white hover:bg-green-700 focus:ring-green-500",
   danger:
@@ -127,7 +128,9 @@ const variantClasses = {
   light:
     "bg-gray-100 text-gray-800 hover:bg-gray-200 focus:ring-gray-300",
   dark:
-    "bg-gray-900 text-white hover:bg-gray-800 focus:ring-gray-700"
+    "bg-gray-900 text-white hover:bg-gray-800 focus:ring-gray-700",
+  ghost:
+    "border-0 bg-transparent text-slate-950 shadow-none focus:ring-slate-300"
 };
 
 const sizeClasses = {
